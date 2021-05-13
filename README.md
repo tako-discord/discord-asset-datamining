@@ -1,3 +1,3 @@
 # discord-asset-archive
 
-archives all assets from the discord client
+discasset automated git uploading
