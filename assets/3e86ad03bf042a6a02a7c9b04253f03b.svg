@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 624 624">
+  <defs>
+    <linearGradient id="linear-gradient" x1="172.61" y1="92.19" x2="326.01" y2="357.89" gradientUnits="userSpaceOnUse">
+      <stop offset="0.09" stop-color="#5a64e8"/>
+      <stop offset="0.22" stop-color="#935cc5"/>
+      <stop offset="0.39" stop-color="#d7529a"/>
+      <stop offset="0.9" stop-color="#d7529a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="260.75" y1="292.58" x2="532.81" y2="449.66" gradientUnits="userSpaceOnUse">
+      <stop offset="0.29" stop-color="#d7529a"/>
+      <stop offset="0.42" stop-color="#af58b3"/>
+      <stop offset="0.57" stop-color="#8a5dca"/>
+      <stop offset="0.72" stop-color="#7061da"/>
+      <stop offset="0.84" stop-color="#6063e4"/>
+      <stop offset="0.94" stop-color="#5a64e8"/>
+    </linearGradient>
+  </defs>
+  <title>Neon</title>
+  <g style="isolation: isolate">
+    <g id="neon">
+      <g>
+        <path d="M451.4,116.6c-93.7-67.1-224.9-58.5-309.1,25.7S49.4,360.5,118.8,454.4" style="fill: none;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 40px;stroke: url(#linear-gradient)"/>
+        <path d="M163.7,500.7c94.2,74.2,231.1,67.9,318-19s93.2-223.1,19.6-317.3" style="fill: none;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 40px;stroke: url(#linear-gradient-2)"/>
+        <path d="M451.4,116.6c-93.7-67.1-224.9-58.5-309.1,25.7S49.4,360.5,118.8,454.4" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 20px;mix-blend-mode: soft-light"/>
+        <path d="M163.7,500.7c94.2,74.2,231.1,67.9,318-19s93.2-223.1,19.6-317.3" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 20px;mix-blend-mode: soft-light"/>
+        <path d="M451.4,116.6c-93.7-67.1-224.9-58.5-309.1,25.7S49.4,360.5,118.8,454.4" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 10px;mix-blend-mode: overlay"/>
+        <path d="M163.7,500.7c94.2,74.2,231.1,67.9,318-19s93.2-223.1,19.6-317.3" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 10px;mix-blend-mode: overlay"/>
+      </g>
+    </g>
+  </g>
+</svg>
