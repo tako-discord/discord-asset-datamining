@@ -1,34 +1,43 @@
 sync-master:
-    rules:
-       - if: '$CI_COMMIT_BRANCH == "master"'
-         changes:
-            - README.md
-            - /*
-    script:
-      - git config user.name "Pukimaa"
-      - git config user.email "pukima@pukima.site"
-      - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
-      - git fetch --all
-      - git switch -c master origin/master
-      - git branch
-      - git branch
-      - git merge upstream/master
-      - git branch
-      - git push origin master
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - mkdir -p ~/.ssh
+    - cat gitlab-known-hosts >> ~/.ssh/known_hosts
+  rules:
+      - if: '$CI_COMMIT_BRANCH == "master"'
+        changes:
+          - README.md
+          - /*
+  script:
+    - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
+    - git fetch --all
+    - git switch -c master origin/master
+    - git merge upstream/master
+    - git push origin master
 sync-organized:
-    rules:
-       - if: '$CI_COMMIT_BRANCH == "organized"'
-         changes:
-            - README.md
-            - /*
-    script:
-      - git config user.name "Pukimaa"
-      - git config user.email "pukima@pukima.site"
-      - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
-      - git fetch --all
-      - git switch -c master origin/organized
-      - git branch
-      - git branch
-      - git merge upstream/organized
-      - git branch
-      - git push origin organized
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - mkdir -p ~/.ssh
+    - cat gitlab-known-hosts >> ~/.ssh/known_hosts
+  rules:
+      - if: '$CI_COMMIT_BRANCH == "organized"'
+        changes:
+          - README.md
+          - /*
+  script:
+    - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
+    - git fetch --all
+    - git switch -c master origin/organized
+    - git branch
+    - git branch
+    - git merge upstream/organized
+    - git branch
+    - git push origin organized
