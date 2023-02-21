@@ -11,4 +11,4 @@ sync-fork:
       - git fetch upstream
       - git checkout origin/master
       - git merge upstream/master
-      - git push
+      - git push origin master
