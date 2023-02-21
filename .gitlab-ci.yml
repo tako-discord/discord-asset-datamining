@@ -5,6 +5,8 @@ sync-fork:
             - README.md
             - /*
     script:
+      - git config user.name "Pukimaa"
+      - git config user.email "pukima@pukima.site"
       - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
       - git fetch upstream
       - git checkout origin/master
