@@ -5,7 +5,6 @@ sync-fork:
             - README.md
             - /*
     script:
-      - git remote add origin https://gitlab.com/tako-discord/discord-asset-datamining.git
       - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
       - git fetch upstream
       - git checkout origin/master
