@@ -11,6 +11,7 @@ sync-master:
           - README.md
           - /*
   script:
+    - git remote set-url origin git@gitlab.com:tako-discord/discord-asset-datamining.git
     - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
     - git fetch --all
     - git switch -c master origin/master
@@ -29,6 +30,7 @@ sync-organized:
           - README.md
           - /*
   script:
+    - git remote set-url origin git@gitlab.com:tako-discord/discord-asset-datamining.git
     - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
     - git fetch --all
     - git switch -c master origin/organized
