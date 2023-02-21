@@ -3,6 +3,8 @@ sync-master:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
     - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
+    - mkdir ~/.ssh
+    - touch ~/.ssh/known_hosts
     - ssh-keygen -R gitlab.com
     - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
     - git config --global user.name "${GITLAB_USER_NAME}"
@@ -24,6 +26,8 @@ sync-organized:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
     - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
+    - mkdir ~/.ssh
+    - touch ~/.ssh/known_hosts
     - ssh-keygen -R gitlab.com
     - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
     - git config --global user.name "${GITLAB_USER_NAME}"
