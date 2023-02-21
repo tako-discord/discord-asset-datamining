@@ -1,0 +1,16 @@
+stages:
+    - sync-master
+
+sync-fork:
+    stage: sync-master
+    rules:
+       - if: '$CI_COMMIT_BRANCH == "master"'
+         changes:
+            - README.md
+            - /*
+    script:
+        - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
+        - git checkout master
+        - git fetch master
+        - git pull upstream master
+        - git push origin master
