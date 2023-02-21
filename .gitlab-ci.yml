@@ -13,7 +13,7 @@ sync-master:
     - git fetch --all
     - git switch -c master origin/master
     - git merge upstream/master
-    - git push origin master
+    - git push -o ci-skip https://gitlab.com/tako-discord/discord-asset-datamining.git HEAD:master
 sync-organized:
   before_script:
     - git config --global user.name "${GITLAB_USER_NAME}"
@@ -32,4 +32,4 @@ sync-organized:
     - git branch
     - git merge upstream/organized
     - git branch
-    - git push origin organized
+    - git push -o ci-skip https://gitlab.com/tako-discord/discord-asset-datamining.git HEAD:master
