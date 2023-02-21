@@ -8,6 +8,5 @@ sync-fork:
         - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
         - git fetch upstream
         - git checkout master
-        - git pull
         - git merge upstream/master
         - git push
