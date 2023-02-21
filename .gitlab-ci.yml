@@ -5,8 +5,6 @@ sync-master:
     - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
     - git config --global user.name "${GITLAB_USER_NAME}"
     - git config --global user.email "${GITLAB_USER_EMAIL}"
-    - mkdir -p ~/.ssh
-    - cat gitlab-known-hosts >> ~/.ssh/known_hosts
   rules:
       - if: '$CI_COMMIT_BRANCH == "master"'
         changes:
@@ -25,8 +23,6 @@ sync-organized:
     - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
     - git config --global user.name "${GITLAB_USER_NAME}"
     - git config --global user.email "${GITLAB_USER_EMAIL}"
-    - mkdir -p ~/.ssh
-    - cat gitlab-known-hosts >> ~/.ssh/known_hosts
   rules:
       - if: '$CI_COMMIT_BRANCH == "organized"'
         changes:
