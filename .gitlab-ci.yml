@@ -19,10 +19,12 @@ sync-master:
     - git push -o ci-skip git@gitlab.com:tako-discord/discord-asset-datamining.git HEAD:organized
 sync-organized:
   before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
     - git config --global user.name "${GITLAB_USER_NAME}"
     - git config --global user.email "${GITLAB_USER_EMAIL}"
     - git config --global user.password "${GITLAB_USER_PASSWORD}"
-    - 
   rules:
       - if: '$CI_COMMIT_BRANCH == "organized"'
         changes:
