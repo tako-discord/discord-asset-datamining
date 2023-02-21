@@ -20,7 +20,7 @@ sync-master:
     - git fetch --all
     - git switch -c master origin/master
     - git merge upstream/master
-    - git push -o ci-skip git@gitlab.com:tako-discord/discord-asset-datamining.git HEAD:organized
+    - git push -o ci-skip git@gitlab.com:tako-discord/discord-asset-datamining.git HEAD:master
 sync-organized:
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
