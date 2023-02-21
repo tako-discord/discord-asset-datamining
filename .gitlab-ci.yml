@@ -1,5 +1,8 @@
 sync-master:
   before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$GIT_SSH_PRIV_KEY")
     - git config --global user.name "${GITLAB_USER_NAME}"
     - git config --global user.email "${GITLAB_USER_EMAIL}"
     - git config --global user.password "${GITLAB_USER_PASSWORD}"
@@ -13,12 +16,13 @@ sync-master:
     - git fetch --all
     - git switch -c master origin/master
     - git merge upstream/master
-    - git push -o ci-skip https://gitlab.com/tako-discord/discord-asset-datamining.git HEAD:master
+    - git push -o ci-skip git@gitlab.com:tako-discord/discord-asset-datamining.git HEAD:organized
 sync-organized:
   before_script:
     - git config --global user.name "${GITLAB_USER_NAME}"
     - git config --global user.email "${GITLAB_USER_EMAIL}"
     - git config --global user.password "${GITLAB_USER_PASSWORD}"
+    - 
   rules:
       - if: '$CI_COMMIT_BRANCH == "organized"'
         changes:
@@ -32,4 +36,4 @@ sync-organized:
     - git branch
     - git merge upstream/organized
     - git branch
-    - git push -o ci-skip https://gitlab.com/tako-discord/discord-asset-datamining.git HEAD:organized
+    - git push -o ci-skip git@gitlab.com:tako-discord/discord-asset-datamining.git HEAD:organized
