@@ -1,4 +1,4 @@
-sync-fork:
+sync-master:
     rules:
        - if: '$CI_COMMIT_BRANCH == "master"'
          changes:
@@ -9,9 +9,26 @@ sync-fork:
       - git config user.email "pukima@pukima.site"
       - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
       - git fetch --all
-      - git checkout origin/master
+      - git switch -c master origin/master
       - git branch
       - git branch
       - git merge upstream/master
       - git branch
       - git push origin master
+sync-organized:
+    rules:
+       - if: '$CI_COMMIT_BRANCH == "organized"'
+         changes:
+            - README.md
+            - /*
+    script:
+      - git config user.name "Pukimaa"
+      - git config user.email "pukima@pukima.site"
+      - git remote add upstream https://gitlab.com/derpystuff/discord-asset-datamining.git
+      - git fetch --all
+      - git switch -c master origin/organized
+      - git branch
+      - git branch
+      - git merge upstream/organized
+      - git branch
+      - git push origin organized
