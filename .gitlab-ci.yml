@@ -32,4 +32,4 @@ sync-organized:
     - git branch
     - git merge upstream/organized
     - git branch
-    - git push -o ci-skip https://gitlab.com/tako-discord/discord-asset-datamining.git HEAD:master
+    - git push -o ci-skip https://gitlab.com/tako-discord/discord-asset-datamining.git HEAD:organized
